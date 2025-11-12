@@ -2,61 +2,41 @@ using System;
 
 namespace InterfaceExercise;
 
-public class Trucks
+public class Trucks : IVehicle , ICompany
 {
-
-   public Trucks()
-   {
-
-   }
-
+   private string _displayDetails;
    public double EngineSize { get; set; } = 4;
-   public string Model { get; set; } = "Mustang";
-   public string Make { get; set; } = "Ford";
-   public int SeatCount { get; set; } = 4;
+      public string Model { get; set; } = "Mustang";
+      public string Make { get; set; } = "Ford";
+      public int SeatCount { get; set; } = 4;
 
-   public string CompanyName { get; set; } = "Ford";
-   public string Motto { get; set; } = "Built Ford Tough";
-   public bool HasChangedGears { get; set; }
-   public bool HasFourWheelDrive { get; set; }
+      public string CompanyName { get; set; } = "Ford";
+      public string Motto { get; set; } = "Built Ford Tough";
 
-   public void Drive()
-   {
-      if (HasFourWheelDrive == true)
+      string IVehicle.DisplayDetails
       {
-         Console.WriteLine($"4 wheel drive {GetType().Name} now driving forward...");
-      }
-      else
-      {
-         Console.WriteLine($"{GetType().Name} now driving backward...");
-      }
-   }
-
-   public void Reverse()
-   {
-      if (HasChangedGears == true)
-      {
-         Console.WriteLine($"{GetType().Name} now reversing...");
-         HasChangedGears = false;
+         get => _displayDetails;
+         set => _displayDetails = value;
       }
 
-      else
+      public void Drive()
       {
-         Console.WriteLine($"Can't reverse until we change gears");
+         Console.WriteLine($"{GetType().Name} now driving forward...");
       }
-   }
 
-   public void Park()
-   {
-      Console.WriteLine($"{GetType().Name} parking...");   
-   }
+      public void Reverse()
+      {
+         Console.WriteLine($"{GetType().Name} reversing...");
+      }
 
-   public bool ChangedGears(bool hasChangedGears)
-   {
-      HasChangedGears = hasChangedGears;
-      return hasChangedGears;
-      HasChangedGears = false;
-   }
+      public void Park()
+      {
+         Console.WriteLine($"{GetType().Name} parking...");   
+      }
+
+      public void DisplayDetails()
+      {
+         Console.WriteLine($"{GetType().Name} display details...");
+      }
    
-   
-}    
+}

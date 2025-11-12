@@ -7,11 +7,11 @@ public interface IVehicle
     public string Make { get; set; }
     public int SeatCount { get; set; }
     public string CompanyName { get; set; }
-    public bool HasChangedGears { get; set; }
+    public string Motto { get; set; }
+    public string DisplayDetails{ get; set; }
 
     public void Drive();
     public void Reverse();
     public void Park();
-    public void ChangeGears(bool isChanged);
-
+    
 }
