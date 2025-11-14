@@ -1,3 +1,5 @@
+using System.Xml.Schema;
+
 namespace InterfaceExercise;
 
 public interface ICompany
@@ -6,6 +8,5 @@ public interface ICompany
     public string Motto { get; set; }
     
     
-    
-    
-}
+
+}   

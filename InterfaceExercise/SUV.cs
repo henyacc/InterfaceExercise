@@ -4,29 +4,24 @@ namespace InterfaceExercise;
 
 public class SUV  : IVehicle, ICompany
 {
-    public double EngineSize { get; set; } = 4;
-    public string Model { get; set; } = "Mustang";
-    public string Make { get; set; } = "Ford";
+    public int EngineSize { get; set; } = 4;
+    public string Model { get; set; } = "Wrangler";
+    public string Make { get; set; } = "Jeep";
     public int SeatCount { get; set; } = 4;
 
-    public string CompanyName { get; set; } = "Ford";
-    public string Motto { get; set; } = "Built Ford Tough";
-    public string DisplayDetails { get; set; }
+    public string CompanyName { get; set; } = "Stellantis";
+    public string Motto { get; set; } = "Powered by our Diversity";
 
-    public void Drive()
+    public void DisplayDetails()
     {
-            Console.WriteLine($"{GetType().Name} now driving...");
+        Console.WriteLine($"EngineSize: {EngineSize} Make: {Make} Model: {Model} SeatCount: {SeatCount} CompanyName: {CompanyName} Motto: {Motto}");
     }
+    
 
-    public void Reverse()
-    {
-        Console.WriteLine($"{GetType().Name} reversed gears now reversed...");
-    }
+    
 
-    public void Park()
-    {
-        Console.WriteLine($"{GetType().Name} parking...");  
-    }
+    
+    
     
 }
     
